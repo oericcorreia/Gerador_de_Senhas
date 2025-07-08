@@ -18,7 +18,7 @@ titulo = tk.Label(root, text="Gerador de Senhas",
 titulo.pack(pady=45)
 
 def senha_gerada():
-    tamanho = 8
+    tamanho = 10
     aleatorio = string.ascii_letters + string.digits + string.punctuation
     senha = "".join(random.choices(aleatorio, k=tamanho))
     return senha
