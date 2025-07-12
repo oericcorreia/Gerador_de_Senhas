@@ -12,14 +12,18 @@ root.geometry("300x400")# dimensões do programa
 # layout do programa utilizando o tk.Canvas
 layout = tk.Canvas(root, width=300, 
                 height=400, 
-                bg="lightblue")
-layout.pack(fill="both", expand=True)
+                bg="#00FFFF")
+layout.pack()
 
 # frame que vai servir como container para adcionar os widgets ao layout e ter um design melhor
-frame = tk.Frame(layout, height=400, width=300, bg="lightblue")
-frame.pack() # centraliza o frame no canvas
+frame = tk.Frame(layout, bg="#00FFFF")
+frame.place(relx=0.5, rely=0.4, anchor="center") # centraliza o frame no canvas
 
 layout.create_line(10, 10, 290, 10)
+layout.create_line(10, 10, 10, 390)
+layout.create_line(290, 390, 10, 390)
+layout.create_line(290, 10, 290, 390)
+
 
 
 # estilo dos botões utilizando o ttk
@@ -32,6 +36,7 @@ titulo = tk.Label(frame, text="Gerador de Senhas",
                   font=("Georgia", 18, "bold"), 
                   bg="lightgreen")
 titulo.pack(pady=45)
+
 
 # função principal que contem o código capaz de gerar a senha de forma aleatória
 def senha_gerada():
@@ -64,6 +69,8 @@ botão_gerar = ttk.Button(frame, text="Gerar senha",
                          command=atualiza, 
                          style="TButton")
 botão_gerar.pack(pady=20)
+
+
 
 # label com a configuração do texto da senha gerada
 label_resultado = tk.Label(frame, text="",
