@@ -124,7 +124,17 @@ def arquivo_senha():
     except Exception as e:
         print(f"Erro ao salvar arquivo: {e}")
 
-    
+
+# busca e carrega a imagem   
+img1 = Image.open(r"C:\Users\ericC\OneDrive\Documentos\Gerador_Senhas\icons\\copiar.png")
+img1 = img1.resize((22, 22))
+img1_tk = ImageTk.PhotoImage(img1)
+
+def copiar():
+    global senha_atual
+    pega = senha_atual
+    pyperclip.copy(pega)
+    messagebox.showinfo(f"Senha copiada!", f"Senha copiada para área de transferência")
 
      
 def fechar_app():
@@ -141,6 +151,7 @@ style.configure("TButton", font=("Arial", 13, "bold"),
 
 
 style.configure("botao_sair.TButton", background="red")
+style.configure("botao_copia.TButton", background="#7aebff")
 
 
 # configura o estilo da animação do cursor ao passar pelo botão
@@ -148,6 +159,12 @@ style.map("TButton",
           background=[("active", "#66c9e7")], 
           foreground=[("active", "white")]
          )
+
+
+botão_copia = ttk.Button(frame3, image=img1_tk, 
+                            command=copiar,
+                            style="botao_copia.TButton")
+botão_copia.place(x=1, y=0)
 
 # botão que chama a função que faz imprimir a senha gerada no layout
 botão_gerar = ttk.Button(frame2, text="Gerar senha", 
