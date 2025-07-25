@@ -10,7 +10,7 @@ O objetivo é criar senhas seguras e aleatórias com apenas um clique. O projeto
 ## 📸 Prévia do Projeto
 
 ### 🧪 Versão Inicial
-<img src="./projetos-imagens/primeiras-versoes.png" width="300"/>
+<img src="../projetos-imagens/primeiras-versoes.png" width="300"/>
 
 ### ✅ Versão Atual
 <img src="versoes-atuais.png" width="400"/>
